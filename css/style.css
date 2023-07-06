@@ -1,0 +1,81 @@
+body {
+    background-color: #6e6e78 !important;    
+}
+
+.chili-header {
+    background-color: #ff004b;
+    height: 90px;
+    padding: 10px;
+}
+
+div.chili-header div:hover {
+    cursor: pointer;
+}
+
+.chili-icon {
+    background-image: url("../img/chili_name.png");
+    background-repeat: no-repeat;
+}
+
+.chili-sean {
+    background-image: url("../img/linkden.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: right;
+}
+
+.chili-follow-us {
+    background-color: #01034a;
+    padding: 10px;
+    color: white;
+    font-family: Ubuntu, Arial;
+}
+
+.chili-follow-us div {
+    margin-right: 20px;
+}
+.chili-follow-us div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.chili-follow-us img {
+    height: 25px;
+}
+
+.chili-tool-bar {
+    height:120px;
+    background-color: #f4f4f6;
+    padding-top: 30px;
+}
+
+.chili-editor-row {
+    height:700px;
+}
+
+.chili-editor {
+    height:350px;
+    width: 600px;
+    margin-top: 50px;
+}
+
+div#chili-editor-loader {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    background-color: #01034a;
+}
+
+div#chili-editor-loader img {
+    position: relative;
+    top: 75px;
+    left: 200px;
+}
+
+.chili-editor iframe {
+    border: none;
+    height:350px;
+    width: 600px;
+}

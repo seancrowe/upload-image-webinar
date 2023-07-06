@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Editor</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+    integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row chili-header justify-content-between">
+      <div class="col chili-icon" onclick="window.location='https://www.linkedin.com/company/chili-publish/';"></div>
+      <div class="col chili-sean " onclick="window.location='https://www.linkedin.com//in/sean-crowe/';"></div>
+    </div>
+    <div class="row chili-follow-us justify-content-center">
+      <div clas="col">
+        <b>Follow Us:</b>
+      </div>
+      <div clas="col" onclick="window.location='https://www.linkedin.com/company/chili-publish/';"> <img
+          src="./img/linkedin-icon.png" />chili-publish
+      </div>
+      <div clas="col" onclick="window.location='https://www.linkedin.com//in/sean-crowe/';">
+        <img src="./img/linkedin-icon.png" />sean-crowe
+      </div>
+    </div>
+    <div class="row chili-tool-bar justify-content-center">
+      <div class="col">
+        <div id="chili-image-buttons" class=" row justify-content-center text-center" style="display:none">
+          <div class="col-1">
+            <button id="chili-image-upload" class="btn btn-danger" onclick="imageSelection(uploadImage)">
+              <img src="./img/image-plus.png" />
+            </button>
+          </div>
+          <div class="col-1">
+            <button id="chili-image-remove" class=" btn btn-danger" onclick="removeImage()">
+              <img src="./img/image-remove.png" />
+            </button>
+          </div>
+          <div id="chili-loading-image-message" style="display:none">
+            <h2>Loading Image</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row  justify-content-center" onclick="deselectFrame()">
+      <div class="chili-editor">
+        <div id="chili-editor-loader">
+          <img src="./img/Reload-1s-200px.gif" />
+        </div>
+        <iframe id="editor-iframe"></iframe>
+      </div>
+    </div>
+  </div>
+  <input id="chili-input-upload" style="display:none" type="file" accept="image/jpeg, image/png" />
+  <script type="module" >
+    import {PublisherInterface} from "https://unpkg.com/@chili-publish/publisher-interface@latest/dist/PublisherInterface.min.js";
+    window.PublisherInterface = PublisherInterface
+
+    // Add you document URL here - you can get the URL from the BackOffice
+    const documentURL = 'https://ft-nostress.chili-publish.online/ft-nostress/editor_html.aspx?doc=770acae8-f4da-4484-bbc5-379b9e9a466f&apiKey=GX0ohac4kIeDCqbd5zV3ZZAhnQTJqRwno7S_o_XXbpVQO72GoWpOrzQw1uIn_0lIEJ==';
+
+    document.getElementById("editor-iframe").src = documentURL + "&fullWS=false";
+
+    window.PublisherInterface.build(document.getElementById("editor-iframe"), {events:["DocumentFullyLoaded"]}).then((publisher) => {
+        window.publisher = publisher;
+    });
+  </script>
+  <script src="js/utilities.js"></script>
+  <script src="js/spicyWebService.js"></script>
+
+  <script src="js/index.js"></script>
+</body>
+
+</html>
